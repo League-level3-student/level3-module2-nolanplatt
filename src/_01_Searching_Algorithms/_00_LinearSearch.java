@@ -1,6 +1,7 @@
 package _01_Searching_Algorithms;
 
 public class _00_LinearSearch {
+
 	// When finding the location of a certain element in an array, 
 	// there are many algorithms that can do so. The simplest is the
 	// linear search. This is best for short unsorted lists of data.
@@ -10,6 +11,12 @@ public class _00_LinearSearch {
 		//   where the value was found.
 		//   If the value is not found in the array, return -1.
 		
-		return 0;
+		for (int i = 0; i < words.length; i++) {
+			if(words[i].equals(value)) {
+				return i;
+			}
+		}
+		return -1;
+		
 	}
 }
