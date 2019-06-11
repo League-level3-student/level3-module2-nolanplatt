@@ -58,23 +58,89 @@ public class Algorithms {
 		
 	}
 	
-	public static double sortScores(List<Double> results) {
-		for (int i = 1; i < results.size(); i++) {
+	public static List<Double> sortScores(List<Double> results) {
 		
-			for (int j = i; j > 0; j++) {
+		
+		boolean swapped;
+		
+		for (int i = 0; i < results.size() - 1; i++) {
+		swapped = false;
+			for (int j = 0; j < results.size() - 1; j++) {
 	
-				if(results.get(j) < results.get(j - 1)) {
-					/*
-					int swap = results.get(j);
+				if(results.get(j) > results.get(j + 1)) {
 					
-					results.get(j) = array[i];					
-					results.get(i) = swap;
-					*/
+					Double swap = results.get(j);
+					
+					results.set(j, results.get(j + 1));			
+					results.set(j + 1, swap);
+					swapped = true;
+				}
+				if(swapped == false) {
+					break;
 				}
 			}
 				
 		}
-		return 0;
+		return results;
+	}
+	
+	public static List<String> sortDNA(List<String> sequences) {
+		
+		
+        boolean swapped; 
+
+		for (int i = 0; i < sequences.size() - 1; i++) {
+			swapped = false;
+			for (int j = 0; j < sequences.size() - 1; j++) {
+	
+				if(sequences.get(j).length() > sequences.get(j + 1).length()) {
+					
+					String swap = sequences.get(j);
+					
+					sequences.set(j, sequences.get(j + 1));			
+					sequences.set(j + 1, swap);
+					swapped = true;
+					
+				}
+				if(swapped == false) {
+					break;
+				}
+			}
+				
+		}
+		return sequences;
+		
+		
+	}
+	
+public static List<String> sortWords(List<String> words) {
+		
+		
+	boolean swapped; 
+
+	for (int i = 0; i < words.size() - 1; i++) {
+		swapped = false;
+		for (int j = 0; j < words.size() - 1; j++) {
+
+			if(words.get(j).compareTo(words.get(j + 1)) > 0) {
+
+				
+				String swap = words.get(j);
+				
+				words.set(j, words.get(j + 1));			
+				words.set(j + 1, swap);
+				swapped = true;
+				
+			}
+			if(swapped == false) {
+				break;
+			}
+		}
+			
+	}
+		return words;
+		
+		
 	}
 	
 	
